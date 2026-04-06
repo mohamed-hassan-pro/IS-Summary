@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IS - المنهج المختصر جداً</title>
+    <title>IS Summary By M.H.Moubdi3</title>
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -127,24 +127,33 @@
             transform: translateX(0);
         }
 
-        #theme-toggle::after { content: '☀️'; }
-        .dark-mode #theme-toggle::after { 
-            content: '🌙'; 
-            transform: translateX(24px);
+        #theme-toggle::after {
+            content: '☀️';
+        }
+
+        .dark-mode #theme-toggle::after {
+            content: '🌙';
+            transform: translateX(-24px);
             background: #1a1a1b;
         }
 
-        #exam-toggle::after { content: '📝'; }
-        .exam-mode #exam-toggle::after { 
-            transform: translateX(24px);
+        #exam-toggle::after {
+            content: '📝';
+        }
+
+        .exam-mode #exam-toggle::after {
+            transform: translateX(-24px);
             background: #e65100;
         }
-        .exam-mode #exam-toggle { background: rgba(230, 81, 0, 0.4); }
+
+        .exam-mode #exam-toggle {
+            background: rgba(230, 81, 0, 0.4);
+        }
 
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .content {
@@ -200,6 +209,18 @@
             background: var(--item-hover)
         }
 
+        .subsection-label {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1em;
+            margin: 20px auto 15px 20px;
+            display: table;
+            direction: ltr;
+        }
+
         /* Exam Mode Specific Styles */
         .exam-mode .answer {
             filter: blur(8px);
@@ -222,7 +243,7 @@
             font-weight: bold;
             z-index: 10;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             display: none;
         }
@@ -233,7 +254,7 @@
 
         .exam-mode .qa-item:not(.revealed):hover::before {
             transform: translateX(-50%) scale(1.05);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .exam-mode .qa-item.revealed .answer {
@@ -298,10 +319,40 @@
             order: 1;
         }
 
-        .badge-important { background: #e74c3c; color: white }
-        .badge-definition { background: #3498db; color: white }
-        .badge-compare { background: #e67e22; color: white }
-        .badge-steps { background: #9b59b6; color: white }
+        .badge-important {
+            background: #e74c3c;
+            color: white
+        }
+
+        .badge-definition {
+            background: #3498db;
+            color: white
+        }
+
+        .badge-compare {
+            background: #e67e22;
+            color: white
+        }
+
+        .badge-steps {
+            background: #9b59b6;
+            color: white
+        }
+
+        .badge-system {
+            background: #27ae60;
+            color: white
+        }
+
+        .badge-role {
+            background: #16a085;
+            color: white
+        }
+
+        .badge-concept {
+            background: #8e44ad;
+            color: white
+        }
 
         .quick-review {
             background: var(--quick-review-bg);
@@ -312,11 +363,35 @@
             text-align: center
         }
 
-        .quick-review h2 { margin-bottom: 15px; font-size: 1.4em }
-        .quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 15px }
-        .quick-card { background: var(--card-bg); padding: 15px; border-radius: 10px }
-        .quick-card h3 { font-size: 0.9em; margin-bottom: 5px; opacity: 0.9 }
-        .quick-card p { font-size: 1.1em; font-weight: bold; line-height: 1.4 }
+        .quick-review h2 {
+            margin-bottom: 15px;
+            font-size: 1.4em
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 15px
+        }
+
+        .quick-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px
+        }
+
+        .quick-card h3 {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.9
+        }
+
+        .quick-card p {
+            font-size: 1.1em;
+            font-weight: bold;
+            line-height: 1.4
+        }
 
         .footer {
             background: var(--footer-bg);
@@ -355,9 +430,17 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .social-link.linkedin:hover { background: #0077b5; }
-        .social-link.email:hover { background: #ea4335; }
-        .social-link.whatsapp:hover { background: #25d366; }
+        .social-link.linkedin:hover {
+            background: #0077b5;
+        }
+
+        .social-link.email:hover {
+            background: #ea4335;
+        }
+
+        .social-link.whatsapp:hover {
+            background: #25d366;
+        }
 
         .social-link i {
             font-size: 1.2em;
@@ -383,7 +466,9 @@
                 max-height: none !important
             }
 
-            .controls, .header::before, .exam-mode .qa-item::before {
+            .controls,
+            .header::before,
+            .exam-mode .qa-item::before {
                 display: none !important;
             }
 
@@ -457,16 +542,17 @@
         <div class="header">
             <div class="controls">
                 <div class="control-item">
-                    <span class="control-label">الوضع الليلي</span>
+                    <span class="control-label">Dark Mode</span>
                     <div class="toggle-btn" id="theme-toggle" title="تبديل الوضع الليلي"></div>
                 </div>
                 <div class="control-item">
-                    <span class="control-label">وضع الامتحان</span>
-                    <div class="toggle-btn" id="exam-toggle" title="تفعيل وضع الامتحان"></div>
+                    <span class="control-label">Exam Mode</span>
+                    <div class="toggle-btn" id="exam-toggle" title="تفعيل/إلغاء وضع الامتحان لإخفاء الإجابات مؤقتاً">
+                    </div>
                 </div>
             </div>
-            <h1>📚 Information Systems</h1>
-            <p>الملخص الذهبي - أهم الكلمات فقط</p>
+            <h1>Information Systems Summary</h1>
+            <p>لا تنسوني من صالح دعائكم</p>
         </div>
 
         <div class="content">
@@ -502,9 +588,10 @@
             </div>
 
             <!-- Section 1: Basic Concepts -->
-            <div class="section active">
-                <div class="section-header"><span>🎯 المفاهيم الأساسية</span></div>
+            <div class="section">
+                <div class="section-header"><span>🎯 Introduction</span></div>
                 <div class="section-content">
+                    <div class="subsection-label">📘 Basic Definitions</div>
                     <div class="qa-item">
                         <div class="question"><span class="badge badge-definition">تعريف</span> <span
                                 class="question-text">System?</span></div>
@@ -512,9 +599,54 @@
                     </div>
                     <div class="qa-item">
                         <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">What are three basic functions of System?</span></div>
+                        <div class="answer">Input (capture elements) → Processing (transform) → Output (transfer
+                            results)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
                                 class="question-text">Information System (IS)?</span></div>
                         <div class="answer">People + Hardware + Software + Networks + Data + Policies</div>
                     </div>
+
+                    <div class="subsection-label">🧩 Components of IS</div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">IS Components?</span></div>
+                        <div class="answer">
+                            1. People = End users + Specialists<br>
+                            2. Hardware = Machines + Media<br>
+                            3. Software = Programs + Procedures<br>
+                            4. Data = Facts + Databases<br>
+                            5. Network = Internet + Intranets
+                        </div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">عمليات</span> <span
+                                class="question-text">Activities?</span></div>
+                        <div class="answer">Input → Process → Output → Storage → Control</div>
+                    </div>
+
+                    <div class="subsection-label">🏢 Classifications of IS by Scope</div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">أنظمة</span> <span
+                                class="question-text">Functional Business Systems?</span></div>
+                        <div class="answer">Focus on operational and managerial applications of basic business functions
+                            | Examples: Accounting, Finance, Marketing</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">أنظمة</span> <span
+                                class="question-text">Strategic Information Systems?</span></div>
+                        <div class="answer">Help get strategic advantage over customers | Examples: Shipment tracking,
+                            E-commerce web systems</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">أنظمة</span> <span
+                                class="question-text">Cross-Functional Information Systems?</span></div>
+                        <div class="answer">Combinations of several IS types | Provide support for many functions</div>
+                    </div>
+
+                    <div class="subsection-label">⚖️ Key Comparisons</div>
                     <div class="qa-item">
                         <div class="question"><span class="badge badge-compare">مقارنة</span> <span
                                 class="question-text">IS vs IT?</span></div>
@@ -531,63 +663,125 @@
                         <div class="answer">Efficiency = Minimize cost/time | Effectiveness = Support strategy +
                             Increase value</div>
                     </div>
+
+                    <div class="subsection-label">🔄 Cybernetics</div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">What is Cybernetics?</span></div>
+                        <div class="answer">System with feedback and control components</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">مفهوم</span> <span
+                                class="question-text">Feedback?</span></div>
+                        <div class="answer">Data about system performance</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">مفهوم</span> <span
+                                class="question-text">Control?</span></div>
+                        <div class="answer">Monitoring and evaluating feedback to determine if system is moving toward
+                            its goal</div>
+                    </div>
+
+                    <div class="subsection-label">🌐 E-Business</div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">What is E-business?</span></div>
+                        <div class="answer">Use Internet tech to empower business processes, e-commerce, and
+                            collaboration</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">استخدامات</span> <span
+                                class="question-text">How e-business is used?</span></div>
+                        <div class="answer">Reengineer internal processes + Enterprise collaboration + Electronic
+                            commerce</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Section 2: SDLC - المختصر جداً -->
+            <!-- Section 3: Operations Support Systems (OSS) -->
             <div class="section">
-                <div class="section-header"><span>🔄 SDLC - تفاصيل كل Step (مختصر جداً)</span></div>
+                <div class="section-header"><span>🖥️ Operations Support Systems (OSS)</span></div>
                 <div class="section-content">
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-important">مهم جداً</span> <span
-                                class="question-text">SDLC Phases?</span></div>
-                        <div class="answer">Planning → Analysis → Design → Implementation</div>
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Transaction Processing Systems (TPS)?</span>
+                        </div>
+                        <div class="answer">Record & process transactions | Sales, Inventory</div>
                     </div>
-
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
-                                class="question-text">PLANNING - السؤال: Why + How?</span></div>
-                        <div class="answer"><strong>Step 1:</strong> Project Initiation = Identify business value (lower
-                            costs ↑ revenues)<br><strong>Step 2:</strong> Project Management = Work plan + Staff +
-                            Control techniques</div>
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Process Control Systems (PCS)?</span></div>
+                        <div class="answer">Monitor physical processes | Sensors | Petroleum</div>
                     </div>
-
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
-                                class="question-text">ANALYSIS - السؤال: Who + What + Where/When?</span></div>
-                        <div class="answer"><strong>Step 1:</strong> Analysis Strategy = Study current system + Envision
-                            new system<br><strong>Step 2:</strong> Requirements Gathering = Develop concept + Build
-                            analysis models<br><strong>Step 3:</strong> System Proposal = Present to sponsor → Decision
-                            to continue</div>
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Enterprise Collaboration Systems (ECS)?</span>
+                        </div>
+                        <div class="answer">Team communications | Email, Video</div>
                     </div>
-
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
-                                class="question-text">DESIGN - السؤال: How will operate?</span></div>
-                        <div class="answer"><strong>Step 1:</strong> Design Strategy = Company built vs
-                            Outsourcing<br><strong>Step 2:</strong> Architecture Design = HW + SW + Network
-                            infrastructure<br><strong>Step 3:</strong> Database & File Specs = What data + Where
-                            stored<br><strong>Step 4:</strong> Program Design = What programs + What they do</div>
+                        <div class="question"><span class="badge badge-concept">طريقة معالجة</span> <span
+                                class="question-text">Batch Processing?</span></div>
+                        <div class="answer">Accumulate transactions over time and process periodically | Example: Bank
+                            processes all checks at night</div>
                     </div>
-
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
-                                class="question-text">IMPLEMENTATION - Longest & Most expensive</span></div>
-                        <div class="answer"><strong>Step 1:</strong> System Construction = Build + Test (performs as
-                            designed)<br><strong>Step 2:</strong> Installation = Old OFF + New ON<br><strong>Step
-                                3:</strong> Support Plan = Post-review + Identify changes</div>
+                        <div class="question"><span class="badge badge-concept">طريقة معالجة</span> <span
+                                class="question-text">Online Processing?</span></div>
+                        <div class="answer">Process transactions immediately | Example: Bank processes ATM withdrawal
+                            immediately</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Section 3: System Analyst -->
+            <!-- Section 4: Management Support Systems (MSS) -->
             <div class="section">
-                <div class="section-header"><span>👨‍💻 Systems Analyst</span></div>
+                <div class="section-header"><span>📊 Management Support Systems (MSS)</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Management Information Systems (MIS)?</span>
+                        </div>
+                        <div class="answer">Reports to managers | Daily sales analysis</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">دعم</span> <span
+                                class="question-text">Decision Support Systems (DSS)?</span></div>
+                        <div class="answer">Interactive decisions | What-if analysis</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Executive Information Systems (EIS)?</span>
+                        </div>
+                        <div class="answer">Critical info executives | Competitors actions</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Expert Systems?</span></div>
+                        <div class="answer">Expert advice | Credit application advisor</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-system">نظام</span> <span
+                                class="question-text">Knowledge Management Systems?</span></div>
+                        <div class="answer">Create + Organize + Disseminate knowledge | Intranet best practices</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Systems Analyst -->
+            <div class="section">
+                <div class="section-header"><span>👨‍💻 Systems Analyst Roles</span></div>
                 <div class="section-content">
                     <div class="qa-item">
                         <div class="question"><span class="badge badge-important">مهم</span> <span
                                 class="question-text">Skills?</span></div>
-                        <div class="answer">Technical + Business + Analytical + Interpersonal + Management + Ethical
+                        <div class="answer">
+                            1. Technical = Tech environment<br>
+                            2. Business = Apply IT<br>
+                            3. Analytical = Problem solve<br>
+                            4. Interpersonal = Communicate<br>
+                            5. Management = Handle pressure<br>
+                            6. Ethical = Fair honest
                         </div>
                     </div>
                     <div class="qa-item">
@@ -597,270 +791,328 @@
                         </div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Business Analyst?</span></div>
+                        <div class="question"><span class="badge badge-role">محلل أعمال</span> <span
+                                class="question-text">Business Analyst?</span></div>
                         <div class="answer">Business issues + Value + Process improvement</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Systems Analyst?</span></div>
+                        <div class="question"><span class="badge badge-role">محلل نظم</span> <span
+                                class="question-text">Systems Analyst?</span></div>
                         <div class="answer">IS issues + IT support + Design IS + Standards</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Infrastructure Analyst?</span></div>
+                        <div class="question"><span class="badge badge-role">محلل بنية</span> <span
+                                class="question-text">Infrastructure Analyst?</span></div>
                         <div class="answer">Technical: System + Infrastructure (HW/SW/Network/DB)</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Change Management?</span></div>
+                        <div class="question"><span class="badge badge-role">إدارة تغيير</span> <span
+                                class="question-text">Change Management?</span></div>
                         <div class="answer">People issues + Documentation + Training + Overcome resistance</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Project Manager?</span></div>
+                        <div class="question"><span class="badge badge-role">مدير مشروع</span> <span
+                                class="question-text">Project Manager?</span></div>
                         <div class="answer">On time + Within budget + Expected value</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Section 4: System Request -->
+            <!-- Section 6: System Development Life Cycle (SDLC) -->
             <div class="section">
-                <div class="section-header"><span>📋 System Request & Feasibility</span></div>
+                <div class="section-header"><span>🔄 System Development Life Cycle (SDLC)</span></div>
                 <div class="section-content">
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Who writes?</span></div>
+                        <div class="question"><span class="badge badge-important">مهم جداً</span> <span
+                                class="question-text">SDLC Phases?</span></div>
+                        <div class="answer">Planning → Analysis → Design → Implementation</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">تساؤلات</span> <span
+                                class="question-text">Planning Questions?</span></div>
+                        <div class="answer">Why be built?<br>How will building?</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">Planning Steps?</span></div>
+                        <div class="answer">
+                            <strong>Step 1:</strong> Project Initiation = Identify business value (lower costs ↑
+                            revenues)<br>
+                            <strong>Step 2:</strong> Project Management = Work plan + Staff + Control techniques
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">تساؤلات</span> <span
+                                class="question-text">Analysis Questions?</span></div>
+                        <div class="answer">Who use?<br>What do?<br>Where & When be used?</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">Analysis Steps?</span></div>
+                        <div class="answer">
+                            <strong>Step 1:</strong> Analysis Strategy = Study current system + Envision new system<br>
+                            <strong>Step 2:</strong> Requirements Gathering = Develop concept + Build analysis
+                            models<br>
+                            <strong>Step 3:</strong> System Proposal = Present to sponsor → Decision to continue
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">تساؤلات</span> <span
+                                class="question-text">Design Question?</span></div>
+                        <div class="answer">How will operate? (HW, SW, Network, UI, Forms, Reports)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">Design Steps?</span></div>
+                        <div class="answer">
+                            <strong>Step 1:</strong> Design Strategy = Company built vs Outsourcing<br>
+                            <strong>Step 2:</strong> Architecture Design = HW + SW + Network infrastructure<br>
+                            <strong>Step 3:</strong> Database & File Specs = What data + Where stored<br>
+                            <strong>Step 4:</strong> Program Design = What programs + What they do
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">تساؤلات</span> <span
+                                class="question-text">Implementation Question?</span></div>
+                        <div class="answer">How build, install, support? (Longest & Most expensive)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">IMPLEMENTATION - Longest & Most expensive</span></div>
+                        <div class="answer">
+                            <strong>Step 1:</strong> System Construction = Build + Test (performs as designed)<br>
+                            <strong>Step 2:</strong> Installation = Old OFF + New ON<br>
+                            <strong>Step 3:</strong> Support Plan = Post-review + Identify changes
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Business Process Management (BPM) -->
+            <div class="section">
+                <div class="section-header"><span>🔄 Business Process Management (BPM)</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">What is BPM?</span></div>
+                        <div class="answer">Methodology to continuously improve end-to-end business processes</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">BPM Process Steps?</span></div>
+                        <div class="answer">
+                            1. Define & map steps<br>
+                            2. Improve value-add steps<br>
+                            3. Eliminate non-value steps<br>
+                            4. Adjust workflows
+                            class="question-text">BPA vs BPI vs BPR?</span></div>
+                        <div class="answer">
+                            <strong>BPA (Business Process Automation):</strong> Tech complements workflows<br>
+                            <strong>BPI (Business Process Improvement):</strong> Redesign processes<br>
+                            <strong>BPR (Business Process Reengineering):</strong> Complete revamp (car to plane)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: System Request -->
+            <div class="section">
+                <div class="section-header"><span>📋 System Request</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">Who writes System Request?</span></div>
                         <div class="answer">Project Sponsor</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-important">مهم</span> <span
-                                class="question-text">Main parts?</span></div>
-                        <div class="answer">1. Business Need (Reason) | 2. Requirements (Capabilities) | 3. Value
-                            (Tangible/Intangible benefits) | 4. Special Issues</div>
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">What is System Request?</span></div>
+                        <div class="answer">Document describes why build system + expected value</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">مكون</span> <span
+                                class="question-text">What is Business Need?</span></div>
+                        <div class="answer">Reason for initiating | Examples: Increase sales, Improve market share</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-concept">مكون</span> <span
+                                class="question-text">What are Business Requirements?</span></div>
+                        <div class="answer">Capabilities system needs | What functions must perform</div>
                     </div>
                     <div class="qa-item">
                         <div class="question"><span class="badge badge-important">مهم</span> <span
-                                class="question-text">Feasibility Types?</span></div>
-                        <div class="answer">Technical (Can we build?) + Economic (Should we build?) + Organizational
-                            (Will they come?)</div>
+                                class="question-text">What is Business Value?</span></div>
+                        <div class="answer">Benefits organization expects</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Technical Feasibility?</span></div>
-                        <div class="answer">Familiarity (app/tech) + Project size + Compatibility</div>
+                        <div class="question"><span class="badge badge-concept">أنواع</span> <span
+                                class="question-text">What are types of Business Value?</span></div>
+                        <div class="answer">Tangible + Intangible</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Economic Feasibility?</span></div>
-                        <div class="answer">Cost-benefit: ROI + BEP + NPV</div>
+                        <div class="question"><span class="badge badge-compare">مادي</span> <span
+                                class="question-text">Tangible Value?</span></div>
+                        <div class="answer">Quantifiable | Example: 3% sales increase, Cost reduction</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Organizational Feasibility?</span></div>
-                        <div class="answer">User acceptance + Stakeholders (Champion + Users + Management)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 5: OSS -->
-            <div class="section">
-                <div class="section-header"><span>🖥️ Operations Support Systems</span></div>
-                <div class="section-content">
-                    <div class="qa-item">
-                        <div class="question"><span class="badge badge-important">مهم</span> <span
-                                class="question-text">OSS Types?</span></div>
-                        <div class="answer">TPS + PCS + ECS</div>
+                        <div class="question"><span class="badge badge-compare">معنوي</span> <span
+                                class="question-text">Intangible Value?</span></div>
+                        <div class="answer">Hard to measure | Example: Customer satisfaction, Brand recognition</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">TPS?</span></div>
-                        <div class="answer">Record & process transactions | Sales, Inventory, Accounting</div>
+                        <div class="question"><span class="badge badge-concept">مكون</span> <span
+                                class="question-text">What are Special Issues?</span></div>
+                        <div class="answer">Other considerations | Example: Must build before holiday</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">PCS?</span></div>
-                        <div class="answer">Monitor & control physical processes | Sensors | Petroleum refinery</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">ECS?</span></div>
-                        <div class="answer">Team communications | Email, Videoconferencing</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="badge badge-compare">مقارنة</span> <span
-                                class="question-text">Batch vs Online?</span></div>
-                        <div class="answer">Batch = Accumulate & process periodically (Checks at night) | Online =
-                            Process immediately (ATM)</div>
+                        <div class="question"><span class="badge badge-role">دور محوري</span> <span
+                                class="question-text">What is Project Sponsor Role?</span></div>
+                        <div class="answer">Primary contact + Ensure direction + Determine business value</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Section 6: MSS -->
+
+
+
+
+            <!-- Section 11: Stakeholders -->
+            <!-- Section 10: Feasibility Analysis -->
             <div class="section">
-                <div class="section-header"><span>📊 Management Support Systems</span></div>
+                <div class="section-header"><span>✅ Feasibility Analysis</span></div>
                 <div class="section-content">
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-important">مهم</span> <span
-                                class="question-text">MSS Types?</span></div>
-                        <div class="answer">MIS + DSS + EIS</div>
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">What is Feasibility Analysis?</span></div>
+                        <div class="answer">Guides organization to determine whether to proceed with project +
+                            Identifies risks</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">MIS?</span></div>
-                        <div class="answer">Reports to managers | Daily sales analysis</div>
+                        <div class="question"><span class="badge badge-important">مهم جداً</span> <span
+                                class="question-text">What are the 3 Areas?</span></div>
+                        <div class="answer">Technical + Economic + Organizational</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">DSS?</span></div>
-                        <div class="answer">Interactive decision support | What-if analysis</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">EIS?</span></div>
-                        <div class="answer">Critical info for executives | Competitors actions</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Expert Systems?</span></div>
-                        <div class="answer">Expert advice | Credit advisor</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Knowledge Management?</span></div>
-                        <div class="answer">Create + Organize + Disseminate knowledge | Intranet best practices</div>
+                        <div class="question"><span class="badge badge-concept">مكون</span> <span
+                                class="question-text">Technical Feasibility?</span></div>
+                        <div class="answer">"Can we build it?" | Extent to which system can be designed, developed,
+                            installed</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Section 7: Classifications -->
+            <!-- Advanced / Under Development Section -->
             <div class="section">
-                <div class="section-header"><span>🏢 IS Classifications</span></div>
-                <div class="section-content">
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Functional IS?</span></div>
-                        <div class="answer">Support basic functions: Accounting, Finance, Marketing</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Cross-Functional IS?</span></div>
-                        <div class="answer">Combination of systems | Support many functions</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Strategic IS?</span></div>
-                        <div class="answer">Competitive advantage | Shipment tracking, E-commerce</div>
-                    </div>
+                <div class="section-header"
+                    style="background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color: #000; text-shadow: none;">
+                    <span>🚀 قريباً: باقي المنهج (Advanced Info)</span>
                 </div>
-            </div>
-
-            <!-- Section 8: E-Business -->
-            <div class="section">
-                <div class="section-header"><span>🌐 E-Business & BPM</span></div>
                 <div class="section-content">
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">E-business?</span></div>
-                        <div class="answer">Internet tech for business processes + E-commerce + Collaboration</div>
+                    <div
+                        style="text-align: center; padding: 25px; margin-bottom: 5px; background: rgba(255, 140, 0, 0.1); border-bottom: 2px dashed #ff8c00;">
+                        <h3 style="margin: 0; color: #e65100;">🛠️ هذه الأقسام قيد التطوير المتقدم وتجمع باقي أجزاء
+                            المنهج!</h3>
                     </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">BPM?</span></div>
-                        <div class="answer">Improve end-to-end processes | Define → Improve → Eliminate → Adjust
-                            workflows</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">BPA vs BPI vs BPR?</span></div>
-                        <div class="answer">BPA = Tech complement workflows | BPI = Redesign processes | BPR = Complete
-                            revamp</div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Section 9: Components -->
-            <div class="section">
-                <div class="section-header"><span>⚙️ Components & Cybernetics</span></div>
-                <div class="section-content">
+                    <div class="subsection-label">👥 Stakeholders</div>
                     <div class="qa-item">
-                        <div class="question"><span class="badge badge-important">مهم</span> <span
-                                class="question-text">IS Components?</span></div>
-                        <div class="answer">People + Hardware + Software + Data + Network</div>
+                        <div class="question"><span class="badge badge-role">صاحب الرؤية</span> <span
+                                class="question-text">Champion?</span></div>
+                        <div class="answer">Initiates project | Promotes it | Allocates time</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">People?</span></div>
-                        <div class="answer">End users + IS specialists</div>
+                        <div class="question"><span class="badge badge-role">مديرون</span> <span
+                                class="question-text">Managers?</span></div>
+                        <div class="answer">Ensure sufficient funds + People</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">IS Activities?</span></div>
-                        <div class="answer">Input → Process → Output → Storage → Control</div>
+                        <div class="question"><span class="badge badge-role">المستخدمون</span> <span
+                                class="question-text">Users?</span></div>
+                        <div class="answer">Use system | Help design | Provide adoption</div>
                     </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Cybernetic System?</span></div>
-                        <div class="answer">Self-monitoring system | Feedback (performance data) + Control (evaluate
-                            feedback)</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Feedback?</span></div>
-                        <div class="answer">Data about system performance</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Control?</span></div>
-                        <div class="answer">Monitor feedback → Determine if achieving goals</div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Section 10: Stakeholders -->
-            <div class="section">
-                <div class="section-header"><span>👥 Stakeholders</span></div>
-                <div class="section-content">
+                    <div class="subsection-label">💰 Economic Measures</div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Champion?</span></div>
-                        <div class="answer">Initiates + Promotes + Allocates time + Provides resources</div>
+                        <div class="question"><span class="badge badge-concept">مقياس اقتصادي</span> <span
+                                class="question-text">Return on Investment (ROI)?</span></div>
+                        <div class="answer">Rate of return earned | (Total Benefits - Total Costs) ÷ Total Costs</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Managers?</span></div>
-                        <div class="answer">Know project + Budget money + Encourage users</div>
+                        <div class="question"><span class="badge badge-concept">مقياس اقتصادي</span> <span
+                                class="question-text">Break-Even Point (BEP)?</span></div>
+                        <div class="answer">When returns match investment (Year when cumulative cash flow becomes
+                            positive)</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">Users?</span></div>
-                        <div class="answer">Influence decisions + Hands-on activities + Determine success (use or not)
+                        <div class="question"><span class="badge badge-concept">مقياس اقتصادي</span> <span
+                                class="question-text">Net Present Value (NPV)?</span></div>
+                        <div class="answer">Present value of future cash flows minus initial investment (Adjusted for
+                            time value of money)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-analysis">تحليل تدفق</span> <span
+                                class="question-text">Cash Flow Analysis:</span></div>
+                        <div class="answer">
+                            <table
+                                style="width:100%; border-collapse: collapse; margin-top: 10px; background: white; border-radius: 8px; overflow: hidden; text-align: left;">
+                                <tr style="background: #667eea; color: white;">
+                                    <th style="padding: 10px; border: 1px solid #ddd;">Year</th>
+                                    <th style="padding: 10px; border: 1px solid #ddd;">Costs</th>
+                                    <th style="padding: 10px; border: 1px solid #ddd;">Benefits</th>
+                                    <th style="padding: 10px; border: 1px solid #ddd;">Net</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">0</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: red;">
+                                        100K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        0</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: red;">
+                                        -100K</td>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">1</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: red;">
+                                        10K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        40K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        +30K</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">2</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: red;">
+                                        10K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        50K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        +40K</td>
+                                </tr>
+                                <tr style="background: #f8f9fa;">
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">3</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: red;">
+                                        10K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        60K</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: green;">
+                                        +50K ✓</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Section 11: Economic -->
-            <div class="section">
-                <div class="section-header"><span>💰 Economic Measures</span></div>
-                <div class="section-content">
+                    <div class="subsection-label">✅ Other Feasibility</div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">ROI?</span></div>
-                        <div class="answer">(Benefits - Costs) / Costs</div>
+                        <div class="question"><span class="badge badge-concept">مفهوم</span> <span
+                                class="question-text">Economic Feasibility?</span></div>
+                        <div class="answer">Cost-benefit measures | "Should we build it?"</div>
                     </div>
                     <div class="qa-item">
-                        <div class="question"><span class="question-text">BEP?</span></div>
-                        <div class="answer">Costs = Benefits | Net cash flow = 0</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">NPV?</span></div>
-                        <div class="answer">PV Benefits - PV Costs | PV = Cash/(1+Rate)^n</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Development Costs?</span></div>
-                        <div class="answer">Salaries + Consultants + Training + HW/SW + Installation + Data conversion
-                        </div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Operational Costs?</span></div>
-                        <div class="answer">Upgrades + Licensing + Repairs + Salaries + Communications + Training</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Tangible Benefits?</span></div>
-                        <div class="answer">Sales ↑ + Staff ↓ + Inventory ↓ + IT costs ↓ + Better prices</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Intangible Benefits?</span></div>
-                        <div class="answer">Market share + Brand recognition + Quality + Customer service</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 12: Additional -->
-            <div class="section">
-                <div class="section-header"><span>📌 Additional Concepts</span></div>
-                <div class="section-content">
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">IS 3 Levels?</span></div>
-                        <div class="answer">1. Operations | 2. Decision Making | 3. Competitive Advantage</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">Evolution?</span></div>
-                        <div class="answer">1950s Data → 1960s Reporting → 1970s DSS → 1980s Strategic → 1990s
-                            E-business</div>
-                    </div>
-                    <div class="qa-item">
-                        <div class="question"><span class="question-text">5 Knowledge Areas?</span></div>
-                        <div class="answer">Foundation + Technology + Applications + Development + Management</div>
+                        <div class="question"><span class="badge badge-concept">مفهوم</span> <span
+                                class="question-text">Organizational Feasibility?</span></div>
+                        <div class="answer">User acceptance + Stakeholders | "If we build it, will they come?"</div>
                     </div>
                 </div>
             </div>
@@ -881,7 +1133,7 @@
                     <span>WhatsApp</span>
                 </a>
             </div>
-            <p>📝 ملخص مختصر جداً | Information Systems | Good Luck! 🍀</p>
+            <p>تم إعداد هذا الملخص لتسهيل المادة، نرجو أن لا تنسوني من صالح دعائكم 🤲 | بالتوفيق للجميع</p>
         </div>
     </div>
 
@@ -890,7 +1142,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const examToggle = document.getElementById('exam-toggle');
         const root = document.documentElement;
-        
+
         // Initial States
         if (localStorage.getItem('theme') === 'dark') root.classList.add('dark-mode');
         if (localStorage.getItem('examMode') === 'true') root.classList.add('exam-mode');
@@ -906,7 +1158,7 @@
             root.classList.toggle('exam-mode');
             const isActive = root.classList.contains('exam-mode');
             localStorage.setItem('examMode', isActive);
-            
+
             // Clear reveals when turning off
             if (!isActive) {
                 document.querySelectorAll('.qa-item').forEach(item => item.classList.remove('revealed'));
@@ -932,9 +1184,48 @@
             });
         });
 
+        // Toggle Subsections
+        document.querySelectorAll('.subsection-label').forEach(label => {
+            label.style.cursor = 'pointer';
+            label.style.userSelect = 'none';
+            label.title = 'اضغط لطي/عرض المحتوى';
+
+            const originalHTML = label.innerHTML;
+            label.innerHTML = `<div style="display: flex; align-items: center; justify-content: space-between; gap: 15px;"><span>${originalHTML}</span><span class="sub-arrow" style="font-size: 0.8em; transition: transform 0.3s; transform: rotate(-90deg);">▼</span></div>`;
+
+            let isExpanded = false;
+
+            // Initially hide all subsection items
+            let initNextEl = label.nextElementSibling;
+            while (initNextEl && !initNextEl.classList.contains('subsection-label') && !initNextEl.classList.contains('section-header')) {
+                initNextEl.style.display = 'none';
+                initNextEl = initNextEl.nextElementSibling;
+            }
+
+            label.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+                const arrow = label.querySelector('.sub-arrow');
+                arrow.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(-90deg)';
+
+                let nextEl = label.nextElementSibling;
+                while (nextEl && !nextEl.classList.contains('subsection-label') && !nextEl.classList.contains('section-header')) {
+                    if (isExpanded) {
+                        nextEl.style.display = '';
+                    } else {
+                        nextEl.style.display = 'none';
+                    }
+                    nextEl = nextEl.nextElementSibling;
+                }
+            });
+        });
+
         // Expand all on print
         window.addEventListener('beforeprint', () => {
             document.querySelectorAll('.section').forEach(s => s.classList.add('active'));
+            document.querySelectorAll('.subsection-label').forEach(label => {
+                const arrow = label.querySelector('.sub-arrow');
+                if (arrow.style.transform !== 'rotate(0deg)') label.click();
+            });
         });
 
         // Detect English starting text and apply alignment
