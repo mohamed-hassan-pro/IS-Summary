@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IS - المنهج المختصر جداً</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px
+        }
+
+        .content {
+            padding: 30px
+        }
+
+        .section {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .section-header::after {
+            content: '▼';
+            font-size: 0.8em
+        }
+
+        .section.active .section-header::after {
+            transform: rotate(180deg)
+        }
+
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: #f8f9fa
+        }
+
+        .section.active .section-content {
+            max-height: 2000px
+        }
+
+        .qa-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .qa-item:hover {
+            background: #e3f2fd
+        }
+
+        .question {
+            color: #1a237e;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Sentence on left, Icon on right */
+        }
+
+        .question::before {
+            content: '❓';
+            margin-inline-end: 10px;
+            font-size: 1.2em;
+            order: 0; /* Far Right in RTL */
+        }
+
+        .answer {
+            color: #2e7d32;
+            font-weight: 600;
+            padding-inline-end: 35px;
+            padding-inline-start: 10px;
+            font-size: 1.05em;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .answer::before {
+            content: ' ✓';
+            color: #4caf50;
+            font-weight: bold;
+            position: absolute;
+            right: 0px; /* Checkmark on Right */
+            top: 15px;
+        }
+
+        .ltr-item {
+            text-align: left !important;
+        }
+
+        .ltr-text {
+            direction: ltr !important;
+            unicode-bidi: isolate;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            margin-inline-start: 10px;
+            font-weight: bold;
+            order: 1;
+        }
+
+        .badge-important { background: #e74c3c; color: white }
+        .badge-definition { background: #3498db; color: white }
+        .badge-compare { background: #e67e22; color: white }
+        .badge-steps { background: #9b59b6; color: white }
+
+        .quick-review {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: center
+        }
+
+        .quick-review h2 { margin-bottom: 15px; font-size: 1.4em }
+        .quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 15px }
+        .quick-card { background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px }
+        .quick-card h3 { font-size: 0.9em; margin-bottom: 5px; opacity: 0.9 }
+        .quick-card p { font-size: 1.1em; font-weight: bold; line-height: 1.4 }
+
+        .footer {
+            background: #263238;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em
+        }
+
+        .question-text {
+            flex-grow: 1;
+            order: 2;
+            text-align: left;
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            .container {
+                box-shadow: none
+            }
+
+            .section-content {
+                max-height: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Information Systems</h1>
+            <p>الملخص الذهبي - أهم الكلمات فقط</p>
+        </div>
+
+        <div class="content">
+            <!-- Quick Review Box -->
+            <div class="quick-review">
+                <h2>⚡ أهم النقاط في جملة</h2>
+                <div class="quick-grid">
+                    <div class="quick-card">
+                        <h3>IS vs IT</h3>
+                        <p>IS = كل المكونات | IT = Hardware + Software + Network + Data</p>
+                    </div>
+                    <div class="quick-card">
+                        <h3>SDLC Phases</h3>
+                        <p>Planning → Analysis → Design → Implementation</p>
+                    </div>
+                    <div class="quick-card">
+                        <h3>System Request</h3>
+                        <p>Need + Requirements + Value + Special Issues</p>
+                    </div>
+                    <div class="quick-card">
+                        <h3>Feasibility</h3>
+                        <p>Technical + Economic + Organizational</p>
+                    </div>
+                    <div class="quick-card">
+                        <h3>OSS</h3>
+                        <p>TPS (معاملات) + PCS (تحكم) + ECS (تعاون)</p>
+                    </div>
+                    <div class="quick-card">
+                        <h3>MSS</h3>
+                        <p>MIS (تقارير) + DSS (قرارات) + EIS (تنفيذية)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1: Basic Concepts -->
+            <div class="section active">
+                <div class="section-header"><span>🎯 المفاهيم الأساسية</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">System?</span></div>
+                        <div class="answer">Components with boundary work together: Input → Process → Output</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-definition">تعريف</span> <span
+                                class="question-text">Information System (IS)?</span></div>
+                        <div class="answer">People + Hardware + Software + Networks + Data + Policies</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-compare">مقارنة</span> <span
+                                class="question-text">IS vs IT?</span></div>
+                        <div class="answer">IS = All components deliver info | IT = HW + SW + Network + Data only</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-compare">مقارنة</span> <span
+                                class="question-text">Data vs Information?</span></div>
+                        <div class="answer">Data = Raw facts | Information = Meaningful data for users</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-compare">مقارنة</span> <span
+                                class="question-text">Efficiency vs Effectiveness?</span></div>
+                        <div class="answer">Efficiency = Minimize cost/time | Effectiveness = Support strategy +
+                            Increase value</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: SDLC - المختصر جداً -->
+            <div class="section">
+                <div class="section-header"><span>🔄 SDLC - تفاصيل كل Step (مختصر جداً)</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم جداً</span> <span
+                                class="question-text">SDLC Phases?</span></div>
+                        <div class="answer">Planning → Analysis → Design → Implementation</div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">PLANNING - السؤال: Why + How?</span></div>
+                        <div class="answer"><strong>Step 1:</strong> Project Initiation = Identify business value (lower
+                            costs ↑ revenues)<br><strong>Step 2:</strong> Project Management = Work plan + Staff +
+                            Control techniques</div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">ANALYSIS - السؤال: Who + What + Where/When?</span></div>
+                        <div class="answer"><strong>Step 1:</strong> Analysis Strategy = Study current system + Envision
+                            new system<br><strong>Step 2:</strong> Requirements Gathering = Develop concept + Build
+                            analysis models<br><strong>Step 3:</strong> System Proposal = Present to sponsor → Decision
+                            to continue</div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">DESIGN - السؤال: How will operate?</span></div>
+                        <div class="answer"><strong>Step 1:</strong> Design Strategy = Company built vs
+                            Outsourcing<br><strong>Step 2:</strong> Architecture Design = HW + SW + Network
+                            infrastructure<br><strong>Step 3:</strong> Database & File Specs = What data + Where
+                            stored<br><strong>Step 4:</strong> Program Design = What programs + What they do</div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-steps">خطوات</span> <span
+                                class="question-text">IMPLEMENTATION - Longest & Most expensive</span></div>
+                        <div class="answer"><strong>Step 1:</strong> System Construction = Build + Test (performs as
+                            designed)<br><strong>Step 2:</strong> Installation = Old OFF + New ON<br><strong>Step
+                                3:</strong> Support Plan = Post-review + Identify changes</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: System Analyst -->
+            <div class="section">
+                <div class="section-header"><span>👨‍💻 Systems Analyst</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">Skills?</span></div>
+                        <div class="answer">Technical + Business + Analytical + Interpersonal + Management + Ethical
+                        </div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">Roles?</span></div>
+                        <div class="answer">Business + Systems + Infrastructure + Change Management + Project Manager
+                        </div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Business Analyst?</span></div>
+                        <div class="answer">Business issues + Value + Process improvement</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Systems Analyst?</span></div>
+                        <div class="answer">IS issues + IT support + Design IS + Standards</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Infrastructure Analyst?</span></div>
+                        <div class="answer">Technical: System + Infrastructure (HW/SW/Network/DB)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Change Management?</span></div>
+                        <div class="answer">People issues + Documentation + Training + Overcome resistance</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Project Manager?</span></div>
+                        <div class="answer">On time + Within budget + Expected value</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: System Request -->
+            <div class="section">
+                <div class="section-header"><span>📋 System Request & Feasibility</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Who writes?</span></div>
+                        <div class="answer">Project Sponsor</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">Main parts?</span></div>
+                        <div class="answer">1. Business Need (Reason) | 2. Requirements (Capabilities) | 3. Value
+                            (Tangible/Intangible benefits) | 4. Special Issues</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">Feasibility Types?</span></div>
+                        <div class="answer">Technical (Can we build?) + Economic (Should we build?) + Organizational
+                            (Will they come?)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Technical Feasibility?</span></div>
+                        <div class="answer">Familiarity (app/tech) + Project size + Compatibility</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Economic Feasibility?</span></div>
+                        <div class="answer">Cost-benefit: ROI + BEP + NPV</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Organizational Feasibility?</span></div>
+                        <div class="answer">User acceptance + Stakeholders (Champion + Users + Management)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: OSS -->
+            <div class="section">
+                <div class="section-header"><span>🖥️ Operations Support Systems</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">OSS Types?</span></div>
+                        <div class="answer">TPS + PCS + ECS</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">TPS?</span></div>
+                        <div class="answer">Record & process transactions | Sales, Inventory, Accounting</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">PCS?</span></div>
+                        <div class="answer">Monitor & control physical processes | Sensors | Petroleum refinery</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">ECS?</span></div>
+                        <div class="answer">Team communications | Email, Videoconferencing</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-compare">مقارنة</span> <span
+                                class="question-text">Batch vs Online?</span></div>
+                        <div class="answer">Batch = Accumulate & process periodically (Checks at night) | Online =
+                            Process immediately (ATM)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: MSS -->
+            <div class="section">
+                <div class="section-header"><span>📊 Management Support Systems</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">MSS Types?</span></div>
+                        <div class="answer">MIS + DSS + EIS</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">MIS?</span></div>
+                        <div class="answer">Reports to managers | Daily sales analysis</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">DSS?</span></div>
+                        <div class="answer">Interactive decision support | What-if analysis</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">EIS?</span></div>
+                        <div class="answer">Critical info for executives | Competitors actions</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Expert Systems?</span></div>
+                        <div class="answer">Expert advice | Credit advisor</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Knowledge Management?</span></div>
+                        <div class="answer">Create + Organize + Disseminate knowledge | Intranet best practices</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: Classifications -->
+            <div class="section">
+                <div class="section-header"><span>🏢 IS Classifications</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Functional IS?</span></div>
+                        <div class="answer">Support basic functions: Accounting, Finance, Marketing</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Cross-Functional IS?</span></div>
+                        <div class="answer">Combination of systems | Support many functions</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Strategic IS?</span></div>
+                        <div class="answer">Competitive advantage | Shipment tracking, E-commerce</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8: E-Business -->
+            <div class="section">
+                <div class="section-header"><span>🌐 E-Business & BPM</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">E-business?</span></div>
+                        <div class="answer">Internet tech for business processes + E-commerce + Collaboration</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">BPM?</span></div>
+                        <div class="answer">Improve end-to-end processes | Define → Improve → Eliminate → Adjust
+                            workflows</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">BPA vs BPI vs BPR?</span></div>
+                        <div class="answer">BPA = Tech complement workflows | BPI = Redesign processes | BPR = Complete
+                            revamp</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 9: Components -->
+            <div class="section">
+                <div class="section-header"><span>⚙️ Components & Cybernetics</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="badge badge-important">مهم</span> <span
+                                class="question-text">IS Components?</span></div>
+                        <div class="answer">People + Hardware + Software + Data + Network</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">People?</span></div>
+                        <div class="answer">End users + IS specialists</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">IS Activities?</span></div>
+                        <div class="answer">Input → Process → Output → Storage → Control</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Cybernetic System?</span></div>
+                        <div class="answer">Self-monitoring system | Feedback (performance data) + Control (evaluate
+                            feedback)</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Feedback?</span></div>
+                        <div class="answer">Data about system performance</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Control?</span></div>
+                        <div class="answer">Monitor feedback → Determine if achieving goals</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 10: Stakeholders -->
+            <div class="section">
+                <div class="section-header"><span>👥 Stakeholders</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Champion?</span></div>
+                        <div class="answer">Initiates + Promotes + Allocates time + Provides resources</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Managers?</span></div>
+                        <div class="answer">Know project + Budget money + Encourage users</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Users?</span></div>
+                        <div class="answer">Influence decisions + Hands-on activities + Determine success (use or not)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 11: Economic -->
+            <div class="section">
+                <div class="section-header"><span>💰 Economic Measures</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">ROI?</span></div>
+                        <div class="answer">(Benefits - Costs) / Costs</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">BEP?</span></div>
+                        <div class="answer">Costs = Benefits | Net cash flow = 0</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">NPV?</span></div>
+                        <div class="answer">PV Benefits - PV Costs | PV = Cash/(1+Rate)^n</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Development Costs?</span></div>
+                        <div class="answer">Salaries + Consultants + Training + HW/SW + Installation + Data conversion
+                        </div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Operational Costs?</span></div>
+                        <div class="answer">Upgrades + Licensing + Repairs + Salaries + Communications + Training</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Tangible Benefits?</span></div>
+                        <div class="answer">Sales ↑ + Staff ↓ + Inventory ↓ + IT costs ↓ + Better prices</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Intangible Benefits?</span></div>
+                        <div class="answer">Market share + Brand recognition + Quality + Customer service</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 12: Additional -->
+            <div class="section">
+                <div class="section-header"><span>📌 Additional Concepts</span></div>
+                <div class="section-content">
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">IS 3 Levels?</span></div>
+                        <div class="answer">1. Operations | 2. Decision Making | 3. Competitive Advantage</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">Evolution?</span></div>
+                        <div class="answer">1950s Data → 1960s Reporting → 1970s DSS → 1980s Strategic → 1990s
+                            E-business</div>
+                    </div>
+                    <div class="qa-item">
+                        <div class="question"><span class="question-text">5 Knowledge Areas?</span></div>
+                        <div class="answer">Foundation + Technology + Applications + Development + Management</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📝 ملخص مختصر جداً | Information Systems | Good Luck! 🍀</p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle sections
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.parentElement;
+                const isActive = section.classList.contains('active');
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                if (!isActive) section.classList.add('active');
+            });
+        });
+
+        // Expand all on print
+        window.addEventListener('beforeprint', () => {
+            document.querySelectorAll('.section').forEach(s => s.classList.add('active'));
+        });
+
+        // Detect English starting text and apply alignment
+        function applyLtrDetection() {
+            const targets = document.querySelectorAll('.question, .answer, .quick-card p, .quick-card h3, .header h1, .header p');
+            targets.forEach(el => {
+                let textToCheck = el.innerText;
+                let textTarget = el;
+
+                // For questions, detect based on the inner text span
+                const qText = el.querySelector('.question-text');
+                if (qText) {
+                    textToCheck = qText.innerText;
+                    textTarget = qText;
+                }
+
+                const firstChar = textToCheck.trim().match(/[A-Za-z\u0600-\u06FF]/);
+                if (firstChar && /[A-Za-z]/.test(firstChar[0])) {
+                    el.classList.add('ltr-item'); // Aligns everything to left
+                    textTarget.classList.add('ltr-text'); // Fixes punctuation dir
+                }
+            });
+        }
+
+        applyLtrDetection();
+    </script>
+</body>
+
+</html>
