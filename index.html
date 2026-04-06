@@ -20,6 +20,9 @@
             --footer-bg: #263238;
             --reveal-bg: #ffe0b2;
             --reveal-text: #e65100;
+            --section-header-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --quick-review-bg: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --card-bg: rgba(255, 255, 255, 0.2);
         }
 
         :root.dark-mode {
@@ -36,6 +39,9 @@
             --footer-bg: #121212;
             --reveal-bg: #3e2723;
             --reveal-text: #ffab91;
+            --section-header-bg: linear-gradient(135deg, #4b1248 0%, #f03232 100%);
+            --quick-review-bg: linear-gradient(135deg, #0d4d4d 0%, #116b43 100%);
+            --card-bg: rgba(0, 0, 0, 0.4);
         }
 
         * {
@@ -153,7 +159,7 @@
         }
 
         .section-header {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: var(--section-header-bg);
             color: white;
             padding: 15px 20px;
             font-size: 1.3em;
@@ -298,7 +304,7 @@
         .badge-steps { background: #9b59b6; color: white }
 
         .quick-review {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: var(--quick-review-bg);
             color: white;
             padding: 20px;
             border-radius: 15px;
@@ -308,7 +314,7 @@
 
         .quick-review h2 { margin-bottom: 15px; font-size: 1.4em }
         .quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 15px }
-        .quick-card { background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px }
+        .quick-card { background: var(--card-bg); padding: 15px; border-radius: 10px }
         .quick-card h3 { font-size: 0.9em; margin-bottom: 5px; opacity: 0.9 }
         .quick-card p { font-size: 1.1em; font-weight: bold; line-height: 1.4 }
 
